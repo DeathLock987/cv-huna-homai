@@ -1,0 +1,75 @@
+/* style.css — Style futuriste/neon pour CV */
+:root{
+  --bg:#05060a;
+  --card:#0b1220;
+  --accent1:#6EE7F7;
+  --accent2:#8B5CF6;
+  --text:#d9e6f2;
+  --muted:#9fb3c8;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: radial-gradient(1200px 600px at 10% 10%, rgba(139,92,246,0.08), transparent), linear-gradient(180deg, #02030a 0%, #071026 100%); color:var(--text); -webkit-font-smoothing:antialiased;}
+
+.topbar{position:sticky;top:0;z-index:40;backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 28px;max-width:1100px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#021022;box-shadow:0 6px 18px rgba(139,92,246,0.15)}
+.name{font-weight:600}
+.menu{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+.menu a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.menu a:hover{color:var(--text);background:linear-gradient(90deg, rgba(110,231,247,0.04), rgba(139,92,246,0.04))}
+
+.container{max-width:1100px;margin:28px auto;padding:0 20px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); border:1px solid rgba(255,255,255,0.04); padding:18px;border-radius:14px;margin-bottom:20px;box-shadow: 0 6px 30px rgba(3,6,18,0.6);}
+
+/* Hero */
+.hero{display:flex;gap:18px;align-items:stretch;padding:22px}
+.hero-left{flex:1;display:flex;gap:18px;align-items:center}
+.avatar{width:120px;height:120px;border-radius:20px;overflow:hidden;flex-shrink:0;box-shadow: 0 8px 30px rgba(139,92,246,0.12);border:1px solid rgba(255,255,255,0.03)}
+.tagline h1{margin:0;font-size:28px;letter-spacing:0.4px}
+.subtitle{margin:6px 0 12px;color:var(--muted)}
+.badges{display:flex;gap:8px}
+.badge{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:6px 10px;border-radius:999px;color:#021022;font-weight:600;font-size:13px}
+
+/* contact card */
+.hero-right{width:320px}
+.contact-card h3{margin:0 0 8px}
+.contact-card a{color:var(--accent1);text-decoration:none}
+#qrcode{margin-top:10px;padding:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));display:inline-block;border-radius:10px}
+
+/* sections */
+.about .lead{color:var(--muted);line-height:1.5}
+.quick{display:flex;gap:18px;margin-top:12px;color:var(--muted);flex-wrap:wrap}
+.exp .job{padding:12px;border-radius:10px;margin-bottom:12px;background:linear-gradient(90deg, rgba(110,231,247,0.02), rgba(139,92,246,0.02))}
+.exp time{display:block;color:var(--muted);font-size:13px;margin-bottom:8px}
+.more summary{cursor:pointer;color:var(--accent1);margin-top:8px}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.skill h4{margin:0 0 6px}
+.skill ul{margin:0;padding-left:18px;color:var(--muted)}
+
+/* contact */
+.contact-list{list-style:none;padding:0;margin:8px 0 18px;color:var(--muted)}
+.cta-row{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#021022;text-decoration:none;font-weight:700}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+
+/* footer */
+.footer{text-align:center;color:var(--muted);font-size:13px;padding:18px}
+
+/* responsive */
+@media (max-width:900px){
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+  .menu{display:none}
+}
+
+/* subtle animations */
+@keyframes neon{
+  0%{box-shadow:0 0 0px rgba(110,231,247,0.12)}
+  50%{box-shadow:0 0 18px rgba(139,92,246,0.14)}
+  100%{box-shadow:0 0 0px rgba(110,231,247,0.12)}
+}
+.logo{animation:neon 3.5s infinite ease-in-out}
